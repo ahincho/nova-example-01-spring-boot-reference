@@ -6,4 +6,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = "galaxy-training-example"
+rootProject.name = "nova-example"

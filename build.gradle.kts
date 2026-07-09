@@ -1,11 +1,11 @@
 plugins {
-    id("pe.edu.galaxy.training.spring-boot") version "1.0.0"
+    id("pe.edu.nova.java.spring-boot") version "1.0.0"
 }
 
-group = "pe.edu.galaxy.training.java.examples"
-version = "1.0.0"
+group = "pe.edu.nova.java.examples"
+version = findProperty("version") as String
 
 dependencies {
-    implementation("pe.edu.galaxy.training.java.starters:observability-spring-boot-starter:1.0.0")
+    implementation("pe.edu.nova.java.starters:nova-observability-starter:0.1.0-SNAPSHOT")
     implementation("org.springframework.boot:spring-boot-starter-restclient")
 }
