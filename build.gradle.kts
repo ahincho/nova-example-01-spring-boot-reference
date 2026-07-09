@@ -1,5 +1,13 @@
 plugins {
     id("pe.edu.nova.java.spring-boot") version "1.0.0"
+    id("net.nemerosa.versioning") version "4.0.1"
+}
+
+versioning {
+    releaseMode = "snapshot"
+    displayMode = "snapshot"
+    dirty = { it }
+    releaseBuild = false
 }
 
 group = "pe.edu.nova.java.examples"
