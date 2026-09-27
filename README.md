@@ -43,7 +43,7 @@ Resolving the Nova dependencies needs a GitHub token with
 |---|---|
 | Generate your own service | [nova-java-spring-boot-archetype](https://github.com/ahincho/nova-java-17-spring-boot-archetype) |
 | Add Nova to an existing one | [nova-java-spring-boot-starter](https://github.com/ahincho/nova-java-12-spring-boot-starter) |
-| The Quarkus equivalent | [nova-java-quarkus-example](https://github.com/ahincho/nova-java-21-quarkus-example) |
+| The Quarkus equivalent | [nova-java-quarkus-example](https://github.com/ahincho/nova-example-04-quarkus-reference) |
 
 ## Requirements
 
