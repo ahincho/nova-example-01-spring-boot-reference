@@ -35,6 +35,6 @@ repositories {
 }
 
 dependencies {
-    implementation("pe.edu.nova.java.starters:nova-observability-spring-boot-starter:2.0.0")
+    implementation("pe.edu.nova.java.starters:nova-observability-spring-boot-starter:2.0.1")
     implementation("org.springframework.boot:spring-boot-starter-restclient")
 }
