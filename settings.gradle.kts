@@ -17,4 +17,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = "nova-example"
+rootProject.name = "nova-example-spring-boot-reference"
