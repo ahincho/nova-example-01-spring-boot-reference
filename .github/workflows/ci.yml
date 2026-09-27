@@ -15,5 +15,5 @@ on:
 jobs:
   build:
     if: github.event_name == 'pull_request'
-    uses: ahincho/nova-devops/.github/workflows/reusable-build-gradle.yml@main
+    uses: ahincho/nova-shared-02-pipelines/.github/workflows/reusable-build-gradle.yml@main
     secrets: inherit

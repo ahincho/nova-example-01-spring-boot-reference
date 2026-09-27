@@ -7,6 +7,6 @@ on:
 
 jobs:
   release-please:
-    uses: ahincho/nova-devops/.github/workflows/reusable-release-please.yml@main
+    uses: ahincho/nova-shared-02-pipelines/.github/workflows/reusable-release-please.yml@main
     secrets:
       GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
