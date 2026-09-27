@@ -15,7 +15,7 @@ does to an ordinary application.
 | `HttpClientConfig` | Where the clients are configured |
 | `ClienteDto` | A DTO carrying masked fields |
 
-It depends on `nova-observability-starter`, so a run also emits the Four
+It depends on `nova-observability-spring-boot-starter`, so a run also emits the Four
 Golden Signals and OTLP traces.
 
 ## Run
