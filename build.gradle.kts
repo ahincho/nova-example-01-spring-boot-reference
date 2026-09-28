@@ -1,5 +1,6 @@
 plugins {
     id("pe.edu.nova.java.spring-boot") version "1.0.3"
+    checkstyle
     id("net.nemerosa.versioning") version "4.0.1"
 }
 
@@ -11,6 +12,12 @@ versioning {
 
 group = "pe.edu.nova.java.examples"
 version = findProperty("version") as String
+
+// reusable-build-gradle.yml corre checkstyleMain, así que la tarea tiene que existir. La
+// configuración es la misma de los starters, con severidad de aviso.
+checkstyle {
+    sourceSets = listOf(project.sourceSets.main.get())
+}
 
 // El plugin agrega mavenLocal y mavenCentral; los starters de Nova están en GitHub Packages,
 // con las mismas credenciales que el plugin en settings.gradle.kts.

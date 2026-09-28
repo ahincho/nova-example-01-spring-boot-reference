@@ -2,13 +2,10 @@ package pe.edu.nova.java.examples.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import pe.edu.nova.java.examples.dto.ClienteDto;
-import pe.edu.nova.java.libs.api.standard.response.ApiResponse;
 import pe.edu.nova.java.libs.observability.annotation.Traced;
-import pe.edu.nova.java.libs.observability.annotation.Metered;
 
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.Map;
