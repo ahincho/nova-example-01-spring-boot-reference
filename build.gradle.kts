@@ -17,6 +17,14 @@ version = findProperty("version") as String
 repositories {
     val readToken = System.getenv("NOVA_PACKAGES_READ_TOKEN") ?: System.getenv("GITHUB_TOKEN")
     maven {
+        name = "NovaSpringBootStarter"
+        url = uri("https://maven.pkg.github.com/ahincho/nova-java-12-spring-boot-starter")
+        credentials {
+            username = System.getenv("GITHUB_ACTOR")
+            password = readToken
+        }
+    }
+    maven {
         name = "NovaCommonsSpringBootStarter"
         url = uri("https://maven.pkg.github.com/ahincho/nova-java-08-commons-spring-boot-starter")
         credentials {
@@ -35,6 +43,8 @@ repositories {
 }
 
 dependencies {
+    // @NovaSpringBootApplication y NovaApplication vienen del starter de la plataforma.
+    implementation("pe.edu.nova.java.starters:nova-spring-boot-starter:1.0.4")
     implementation("pe.edu.nova.java.starters:nova-observability-spring-boot-starter:2.0.1")
     implementation("org.springframework.boot:spring-boot-starter-restclient")
 }
