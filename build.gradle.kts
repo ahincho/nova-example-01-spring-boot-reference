@@ -1,5 +1,6 @@
 plugins {
-    id("pe.edu.nova.java.spring-boot") version "1.0.0"
+    id("pe.edu.nova.java.spring-boot") version "1.0.3"
+    checkstyle
     id("net.nemerosa.versioning") version "4.0.1"
 }
 
@@ -12,7 +13,45 @@ versioning {
 group = "pe.edu.nova.java.examples"
 version = findProperty("version") as String
 
+// reusable-build-gradle.yml corre checkstyleMain, así que la tarea tiene que existir. La
+// configuración es la misma de los starters, con severidad de aviso.
+checkstyle {
+    sourceSets = listOf(project.sourceSets.main.get())
+}
+
+// El plugin agrega mavenLocal y mavenCentral; los starters de Nova están en GitHub Packages,
+// con las mismas credenciales que el plugin en settings.gradle.kts.
+repositories {
+    val readToken = System.getenv("NOVA_PACKAGES_READ_TOKEN") ?: System.getenv("GITHUB_TOKEN")
+    maven {
+        name = "NovaSpringBootStarter"
+        url = uri("https://maven.pkg.github.com/ahincho/nova-java-12-spring-boot-starter")
+        credentials {
+            username = System.getenv("GITHUB_ACTOR")
+            password = readToken
+        }
+    }
+    maven {
+        name = "NovaCommonsSpringBootStarter"
+        url = uri("https://maven.pkg.github.com/ahincho/nova-java-08-commons-spring-boot-starter")
+        credentials {
+            username = System.getenv("GITHUB_ACTOR")
+            password = readToken
+        }
+    }
+    maven {
+        name = "NovaObservabilitySpringBootStarter"
+        url = uri("https://maven.pkg.github.com/ahincho/nova-java-09-observability-spring-boot-starter")
+        credentials {
+            username = System.getenv("GITHUB_ACTOR")
+            password = readToken
+        }
+    }
+}
+
 dependencies {
-    implementation("pe.edu.nova.java.starters:nova-observability-starter:0.1.0-SNAPSHOT")
+    // @NovaSpringBootApplication y NovaApplication vienen del starter de la plataforma.
+    implementation("pe.edu.nova.java.starters:nova-spring-boot-starter:1.0.4")
+    implementation("pe.edu.nova.java.starters:nova-observability-spring-boot-starter:2.0.1")
     implementation("org.springframework.boot:spring-boot-starter-restclient")
 }

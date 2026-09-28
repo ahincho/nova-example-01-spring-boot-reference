@@ -1,7 +1,5 @@
 package pe.edu.nova.java.examples.dto;
 
-import pe.edu.nova.java.libs.mask.utils.annotation.SkipMasking;
-
 /**
  * DTO de ejemplo con datos sensibles. Los campos cuyo nombre coincide con
  * patrones conocidos (email, telefono, dni, tarjeta, etc.) se enmascaran

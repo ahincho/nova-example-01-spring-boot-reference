@@ -15,7 +15,7 @@ does to an ordinary application.
 | `HttpClientConfig` | Where the clients are configured |
 | `ClienteDto` | A DTO carrying masked fields |
 
-It depends on `nova-observability-starter`, so a run also emits the Four
+It depends on `nova-observability-spring-boot-starter`, so a run also emits the Four
 Golden Signals and OTLP traces.
 
 ## Run
@@ -33,17 +33,17 @@ curl localhost:8080/hello
 The response comes back in the platform envelope rather than as a bare
 object — that wrapping is the point of the example.
 
-Resolving the Nova dependencies needs a GitHub token with
-`read:packages` in `gpr.user` / `gpr.key` or `GITHUB_ACTOR` /
-`GITHUB_TOKEN`.
+Resolving the Nova plugin and starters needs `GITHUB_ACTOR` and a GitHub
+token with `read:packages` in `GITHUB_TOKEN` (CI passes
+`NOVA_PACKAGES_READ_TOKEN` instead).
 
 ## Where to go next
 
 | | |
 |---|---|
-| Generate your own service | [nova-java-spring-boot-archetype](https://github.com/ahincho/nova-java-17-spring-boot-archetype) |
-| Add Nova to an existing one | [nova-java-spring-boot-starter](https://github.com/ahincho/nova-java-12-spring-boot-starter) |
-| The Quarkus equivalent | [nova-java-quarkus-example](https://github.com/ahincho/nova-example-04-quarkus-reference) |
+| Generate your own service | [nova-java-17-spring-boot-archetype](https://github.com/ahincho/nova-java-17-spring-boot-archetype) |
+| Add Nova to an existing one | [nova-java-12-spring-boot-starter](https://github.com/ahincho/nova-java-12-spring-boot-starter) |
+| The Quarkus equivalent | [nova-example-04-quarkus-reference](https://github.com/ahincho/nova-example-04-quarkus-reference) |
 
 ## Requirements
 
